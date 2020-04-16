@@ -21,7 +21,7 @@ class ArrayList
 
     public function get($index)
     {
-        if ($this->isInteger($index) && $index < count($this->arrayList)) {
+        if ($this->isInteger($index) && $index < $this->size()) {
             return $this->arrayList[$index];
         } else {
             die("ERROR in ArrayList.get");
@@ -31,5 +31,10 @@ class ArrayList
     public function isInteger($toCheck)
     {
         return preg_match("/^[0-9]+$/", $toCheck);
+    }
+
+    public function size()
+    {
+        return $this->arrayList;
     }
 }
